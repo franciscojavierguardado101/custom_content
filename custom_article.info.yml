@@ -1,0 +1,8 @@
+name: 'Custom Article'
+type: module
+description: 'Defines a custom content type called Custom Article.'
+core_version_requirement: ^8 || ^9
+package: Custom
+version: 1.0
+dependencies:
+  - node

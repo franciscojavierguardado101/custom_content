@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function custom_article_install() {
+  // Define custom database schema changes if necessary.
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function custom_article_uninstall() {
+  // Clean up any custom database schema changes if necessary.
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function custom_article_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Customize the form for the Custom Article content type.
+  if ($form_id == 'node_custom_article_form') {
+    // Add custom form alterations here.
+  }
+}

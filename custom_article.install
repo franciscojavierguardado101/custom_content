@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function custom_article_install() {
+  // Define custom database schema changes if necessary.
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function custom_article_uninstall() {
+  // Clean up any custom database schema changes if necessary.
+}
+
+/**
+ * Implements hook_schema().
+ */
+function custom_article_schema() {
+  $schema['custom_article'] = [
+    'description' => 'Contains custom article content',
+    'fields' => [
+      'id' => [
+        'description' => 'The primary identifier for a custom article.',
+        'type' => 'serial',
+        'unsigned' => true,
+        'not null' => true,
+      ],
+      'title' => [
+        'description' => 'The title of the custom article.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => true,
+        'default' => '',
+      ],
+      'body' => [
+        'description' => 'The body of the custom article.',
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => true,
+      ],
+      'author' => [
+        'description' => 'The author of the custom article.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => true,
+        'default' => '',
+      ],
+      'published_date' => [
+        'description' => 'The publication date of the custom article.',
+        'type' => 'int',
+        'not null' => true,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}
